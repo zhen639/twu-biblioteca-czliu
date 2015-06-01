@@ -4,16 +4,8 @@ import java.util.ArrayList;
 
 public class BibliotecaApp {
     private static ArrayList<Book> bookList = new ArrayList<Book>();
-    public static void main(String[] args) {
 
-        System.out.println("Hello, world! !Myfriend");
-    }
-
-    public static String login() {
-        return "Welcome to The Bangalore Public Library";
-    }
-
-    public static void generateBookList(){
+    public BibliotecaApp(){
         Book book1 = new Book();
         book1.setName("Dataming");
         book1.setAuthor("Jack Chen");
@@ -27,11 +19,30 @@ public class BibliotecaApp {
         bookList.add(book2);
     }
 
+    public static void main(String[] args) {
+
+        System.out.println("Hello, world! !Myfriend");
+    }
+
+    public static String login() {
+        return "Welcome to The Bangalore Public Library";
+    }
+
     public static String showBookList() {
         String result = "The book list:\n";
-        generateBookList();
         for (int i = 0; i < bookList.size(); i++) {
             result += Integer.toString(i+1) + "." + bookList.get(i).getName() + "\n";
+        }
+        return result;
+    }
+
+    public static String showBookListDetails() {
+        String result = "The book list:\n";
+        for (int i = 0; i < bookList.size(); i++) {
+            result += Integer.toString(i+1) + "."
+                    + bookList.get(i).getName()+ ", "
+                    + bookList.get(i).getAuthor() + ", "
+                    + bookList.get(i).getPublishYear() + "\n";
         }
         return result;
     }
