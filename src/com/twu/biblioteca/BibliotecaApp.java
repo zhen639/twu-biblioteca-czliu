@@ -6,4 +6,8 @@ public class BibliotecaApp {
 
         System.out.println("Hello, world! !Myfriend");
     }
+
+    public static String login() {
+        return "Welcome to The Bangalore Public Library";
+    }
 }
