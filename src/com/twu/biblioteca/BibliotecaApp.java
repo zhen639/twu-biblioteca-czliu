@@ -3,8 +3,7 @@ package com.twu.biblioteca;
 import java.util.ArrayList;
 
 public class BibliotecaApp {
-    private static ArrayList<String> bookList = new ArrayList<String>();
-
+    private static ArrayList<Book> bookList = new ArrayList<Book>();
     public static void main(String[] args) {
 
         System.out.println("Hello, world! !Myfriend");
@@ -15,15 +14,24 @@ public class BibliotecaApp {
     }
 
     public static void generateBookList(){
-        bookList.add("Dataming");
-        bookList.add("How to be a good man");
+        Book book1 = new Book();
+        book1.setName("Dataming");
+        book1.setAuthor("Jack Chen");
+        book1.setPublishYear("2012");
+        bookList.add(book1);
+
+        Book book2 = new Book();
+        book2.setName("How to be a good man");
+        book2.setAuthor("Jammo Tang");
+        book2.setPublishYear("2009");
+        bookList.add(book2);
     }
 
     public static String showBookList() {
         String result = "The book list:\n";
         generateBookList();
         for (int i = 0; i < bookList.size(); i++) {
-            result += Integer.toString(i+1) + "." + bookList.get(i) + "\n";
+            result += Integer.toString(i+1) + "." + bookList.get(i).getName() + "\n";
         }
         return result;
     }
