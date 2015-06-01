@@ -15,4 +15,12 @@ public class ExampleTest {
     public void WelcomMessage(){
         assertEquals("Welcome to The Bangalore Public Library", BibliotecaApp.login());
     }
+
+    @Test
+    public void ListBooks(){
+        assertEquals("The book list:\n1.Dataming\n2.How to be a good man\n",
+                BibliotecaApp.showBookList());
+    }
+    
+
 }
