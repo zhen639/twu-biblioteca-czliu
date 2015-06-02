@@ -47,4 +47,10 @@ public class BibliotecaApp {
         }
         return result;
     }
+
+    public String showMainMenu() {
+        String result = "Main Menu:\n";
+        result += "1.List Books\n";
+        return result;
+    }
 }

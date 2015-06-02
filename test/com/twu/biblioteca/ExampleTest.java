@@ -39,9 +39,9 @@ public class ExampleTest {
 
     @Test
     public void ListBooks(){
-        BibliotecaApp bibliotecaApp2 = new BibliotecaApp();
+        BibliotecaApp bibliotecaApp = new BibliotecaApp();
         assertEquals("The book list:\n1.Dataming\n2.How to be a good man\n",
-                bibliotecaApp2.showBookList());
+                bibliotecaApp.showBookList());
     }
 
     @Test
@@ -51,12 +51,14 @@ public class ExampleTest {
                 BibliotecaApp.showBookListDetails());
     }
 
-
     @Test
-    public void ConsoleOut(){
-        System.out.print("hello world");
-        assertEquals("hello world", outContent.toString());
+    public void MainMenu(){
+        BibliotecaApp bibliotecaApp = new BibliotecaApp();
+        assertEquals("Main Menu:\n1.List Books\n", bibliotecaApp.showMainMenu());
     }
+
+
+
 
 
 }
