@@ -6,6 +6,7 @@ public class BibliotecaApp {
     private static ArrayList<Book> bookList = new ArrayList<Book>();
 
     public BibliotecaApp(){
+        bookList.clear();
         Book book1 = new Book();
         book1.setName("Dataming");
         book1.setAuthor("Jack Chen");
