@@ -14,7 +14,7 @@ public class CheckoutBookController {
 
     public static String checkoutBook(int i){
         if (i<0 || i>booklist.size()){
-            return "That book is not available";
+            return "That book is not available.";
         }else if (i==0){
             return "";
         }else{

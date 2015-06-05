@@ -126,6 +126,35 @@ public class ExampleTest {
         mainMenuEntries.add("List Book");
         mainMenuEntries.add("Checkout Book");
         BibliotecaApp bibliotecaApp = new BibliotecaApp();
+        Book bookReturned = new Book();
+        bookReturned.setName("Dataming");
+        assertTrue(BibliotecaApp.returnBook(bookReturned));
+
+    }
+
+    @Test
+    public void SuccessfulReturn(){
+        ArrayList<String> mainMenuEntries = new ArrayList<String>();
+        mainMenuEntries.add("List Book");
+        mainMenuEntries.add("Checkout Book");
+        BibliotecaApp bibliotecaApp = new BibliotecaApp();
         ReturnBookController returnBookController = new ReturnBookController();
+        Book bookReturned = new Book();
+        bookReturned.setName("Dataming");
+        returnBookController.setBookReturned(bookReturned);
+        assertEquals("Thank you for returning the book.", returnBookController.returnBook());
+    }
+
+    @Test
+    public void UnsuccessfulReturn(){
+        ArrayList<String> mainMenuEntries = new ArrayList<String>();
+        mainMenuEntries.add("List Book");
+        mainMenuEntries.add("Checkout Book");
+        BibliotecaApp bibliotecaApp = new BibliotecaApp();
+        ReturnBookController returnBookController = new ReturnBookController();
+        Book bookReturned = new Book();
+        bookReturned.setName("Go to your Daddy");
+        returnBookController.setBookReturned(bookReturned);
+        assertEquals("That is not a valid book to return.", returnBookController.returnBook());
     }
 }

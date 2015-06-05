@@ -88,4 +88,12 @@ public class BibliotecaApp {
     public static ArrayList<Book> getBookList() {
         return bookList;
     }
+
+    public static boolean returnBook(Book book) {
+        if (bookList.add(book)){
+            return true;
+        }
+        return false;
+
+    }
 }
