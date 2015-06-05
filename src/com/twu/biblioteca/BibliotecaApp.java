@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 public class BibliotecaApp {
     private static ArrayList<Book> bookList = new ArrayList<Book>();
+    private static ArrayList<String> mainMenuEntries = new ArrayList<String>();
 
     public BibliotecaApp(){
         bookList.clear();
@@ -48,9 +49,43 @@ public class BibliotecaApp {
         return result;
     }
 
+    public static void initMainMenuEntries() {
+        mainMenuEntries.clear();
+        mainMenuEntries.add("List Books");
+    }
+
+    public void addMainEntries(){
+        mainMenuEntries.add("Checkout Book");
+    }
+
+    public static void setMainMenuEntries(ArrayList<String> mainMenuEntries) {
+        BibliotecaApp.mainMenuEntries = mainMenuEntries;
+    }
+
     public String showMainMenu() {
+        initMainMenuEntries();
         String result = "Main Menu:\n";
-        result += "1.List Books\n";
+        for (int i = 0; i < mainMenuEntries.size(); i++) {
+            result += Integer.toString(i+1) + "." + mainMenuEntries.get(i) + "\n";
+        }
         return result;
+    }
+
+    public String showMainMenuWithQuit() {
+        initMainMenuEntries();
+        String result = "Main Menu:\n";
+        for (int i = 0; i < mainMenuEntries.size(); i++) {
+            result += Integer.toString(i+1) + "." + mainMenuEntries.get(i) + "\n";
+        }
+        result += "0.Quit\n";
+        return result;
+    }
+
+    public ArrayList<String> getMainMenuEntries() {
+        return mainMenuEntries;
+    }
+
+    public static ArrayList<Book> getBookList() {
+        return bookList;
     }
 }
