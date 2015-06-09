@@ -157,4 +157,27 @@ public class ExampleTest {
         returnBookController.setBookReturned(bookReturned);
         assertEquals("That is not a valid book to return.", returnBookController.returnBook());
     }
+
+    @Test
+    public void ListMovies(){
+        BibliotecaApp bibliotecaApp = new BibliotecaApp();
+        MoviesViewer moviesViewer = new MoviesViewer();
+        Movie upTheAir = new Movie();
+        upTheAir.setName("Up the air");
+        upTheAir.setYear("2009");
+        upTheAir.setDirector("Jason Reitman");
+        upTheAir.setRating("7.9");
+        ArrayList<Movie> movieList = new ArrayList<Movie>();
+        movieList.add(upTheAir);
+
+        moviesViewer.setMoviesList(movieList);
+        assertEquals("1. Up the air, 2009, Jason Reitman, 7.9\n", moviesViewer.show());
+
+    }
+
+    @Test
+    public void CheckoutMovie(){
+        BibliotecaApp bibliotecaApp = new BibliotecaApp();
+        MovieController movieController = new MovieController();
+    }
 }
