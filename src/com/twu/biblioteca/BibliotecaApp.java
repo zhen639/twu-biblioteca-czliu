@@ -5,6 +5,7 @@ import java.util.ArrayList;
 public class BibliotecaApp {
     private static ArrayList<Book> bookList = new ArrayList<Book>();
     private static ArrayList<String> mainMenuEntries = new ArrayList<String>();
+    private static UserAccount userAccount;
 
     public BibliotecaApp(){
         bookList.clear();
@@ -97,9 +98,21 @@ public class BibliotecaApp {
 
     }
 
+
+
     public static boolean checkLogin(String userName, String password) {
         UserAccount.setUserName("admin");
         UserAccount.setPassword("admin");
         return userName.equals(UserAccount.getUserName()) && password.equals(UserAccount.getPassword());
+    }
+
+    public String userInfo() {
+        return userAccount.getName() + "\n" +
+                userAccount.getEmail() + "\n" +
+                userAccount.getPhoneNumber() + "\n";
+    }
+
+    public static void setUserAccount(UserAccount userAccount) {
+        BibliotecaApp.userAccount = userAccount;
     }
 }

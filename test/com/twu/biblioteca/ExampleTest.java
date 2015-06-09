@@ -179,4 +179,19 @@ public class ExampleTest {
         BibliotecaApp bibliotecaApp = new BibliotecaApp();
         assertTrue(bibliotecaApp.checkLogin("admin", "admin"));
     }
+
+    @Test
+    public void UserAccountsInformation(){
+        BibliotecaApp bibliotecaApp = new BibliotecaApp();
+        UserAccount userAccount = new UserAccount();
+        userAccount.setUserName("admin");
+        userAccount.setPassword("admin");
+        userAccount.setName("Caizhen Liu");
+        userAccount.setEmail("zhen6939@163.com");
+        userAccount.setPhoneNumber("177 7777 7777");
+        bibliotecaApp.setUserAccount(userAccount);
+        assertEquals("Caizhen Liu\n" +
+                "zhen6939@163.com\n" +
+                "177 7777 7777\n", bibliotecaApp.userInfo());
+    }
 }
