@@ -17,18 +17,6 @@ public class ExampleTest {
     private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
     private final ByteArrayOutputStream errContent = new ByteArrayOutputStream();
 
-    @Before
-    public void setUpStreams() {
-        System.setOut(new PrintStream(outContent));
-        System.setErr(new PrintStream(errContent));
-    }
-
-    @After
-    public void cleanUpStreams() {
-        System.setOut(null);
-        System.setErr(null);
-    }
-
     @Test
     public void test() {
         assertEquals(1, 1);
@@ -179,5 +167,14 @@ public class ExampleTest {
     public void CheckoutMovie(){
         BibliotecaApp bibliotecaApp = new BibliotecaApp();
         MovieController movieController = new MovieController();
+        Movie upTheAir = new Movie();
+        upTheAir.setName("Up the air");
+        upTheAir.setYear("2009");
+        upTheAir.setDirector("Jason Reitman");
+        upTheAir.setRating("7.9");
+        ArrayList<Movie> movieList = new ArrayList<Movie>();
+        movieList.add(upTheAir);
+        assertEquals("You checkout Up the air\n", movieController.checkout(0));
+
     }
 }

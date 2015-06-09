@@ -19,4 +19,8 @@ public class MoviesViewer {
         }
         return result;
     }
+
+    public static ArrayList<Movie> getMoviesList() {
+        return moviesList;
+    }
 }
