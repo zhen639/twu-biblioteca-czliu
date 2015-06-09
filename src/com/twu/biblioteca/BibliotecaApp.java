@@ -96,4 +96,10 @@ public class BibliotecaApp {
         return false;
 
     }
+
+    public static boolean checkLogin(String userName, String password) {
+        UserAccount.setUserName("admin");
+        UserAccount.setPassword("admin");
+        return userName.equals(UserAccount.getUserName()) && password.equals(UserAccount.getPassword());
+    }
 }

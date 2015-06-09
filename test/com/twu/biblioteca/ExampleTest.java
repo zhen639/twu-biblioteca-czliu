@@ -138,7 +138,6 @@ public class ExampleTest {
         ArrayList<String> mainMenuEntries = new ArrayList<String>();
         mainMenuEntries.add("List Book");
         mainMenuEntries.add("Checkout Book");
-        BibliotecaApp bibliotecaApp = new BibliotecaApp();
         ReturnBookController returnBookController = new ReturnBookController();
         Book bookReturned = new Book();
         bookReturned.setName("Go to your Daddy");
@@ -148,7 +147,6 @@ public class ExampleTest {
 
     @Test
     public void ListMovies(){
-        BibliotecaApp bibliotecaApp = new BibliotecaApp();
         MoviesViewer moviesViewer = new MoviesViewer();
         Movie upTheAir = new Movie();
         upTheAir.setName("Up the air");
@@ -165,7 +163,6 @@ public class ExampleTest {
 
     @Test
     public void CheckoutMovie(){
-        BibliotecaApp bibliotecaApp = new BibliotecaApp();
         MovieController movieController = new MovieController();
         Movie upTheAir = new Movie();
         upTheAir.setName("Up the air");
@@ -175,6 +172,11 @@ public class ExampleTest {
         ArrayList<Movie> movieList = new ArrayList<Movie>();
         movieList.add(upTheAir);
         assertEquals("You checkout Up the air\n", movieController.checkout(0));
+    }
 
+    @Test
+    public void UserAccountsLogin(){
+        BibliotecaApp bibliotecaApp = new BibliotecaApp();
+        assertTrue(bibliotecaApp.checkLogin("admin", "admin"));
     }
 }
